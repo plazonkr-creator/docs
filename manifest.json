@@ -1,0 +1,16 @@
+{
+    "name": "대담쌤 문수희 | AI & 코딩 교육 전문가",
+    "short_name": "대담쌤",
+    "description": "15년 IT 전문가가 가르치는 실전 AI & 코딩 교육",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#7C3AED",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}
