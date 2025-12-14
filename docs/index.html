@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대담쌤 문수희 | AI & 코딩 교육 전문가</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="15년 IT 전문가가 가르치는 실전 AI & 코딩 교육. 야놀자, NHN 출신 DBA의 맞춤형 교육 프로그램. ChatGPT, 로봇, FLL 멘토링.">
+    <meta name="keywords" content="AI교육, 코딩교육, ChatGPT, 로봇교육, FLL, 레고스파이크, 기업교육, 진로교육, 대담쌤, 문수희">
+    <meta name="author" content="대담쌤 문수희">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="대담쌤 문수희 | AI & 코딩 교육 전문가">
+    <meta property="og:description" content="15년 IT 전문가가 가르치는 실전 AI & 코딩 교육">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="대담쌤 문수희 | AI & 코딩 교육 전문가">
+    <meta name="twitter:description" content="15년 IT 전문가가 가르치는 실전 AI & 코딩 교육">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+    
+    <!-- Web Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#7C3AED">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary: #7C3AED;
+            --primary-dark: #5B21B6;
+            --accent-pink: #EC4899;
+            --accent-blue: #3B82F6;
+            --accent-cyan: #06B6D4;
+            --accent-yellow: #F59E0B;
+            --dark: #1A1A2E;
+            --gray-900: #111827;
+            --gray-700: #374151;
+            --gray-500: #6B7280;
+            --gray-300: #D1D5DB;
+            --gray-100: #F3F4F6;
+            --white: #FFFFFF;
+            --gradient-hero: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #3B82F6 100%);
+            --gradient-card: linear-gradient(180deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 32px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== Header ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--gray-700);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-xl);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            transition: var(--transition);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            background: linear-gradient(180deg, #F8F4FF 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -20px) rotate(5deg); }
+            50% { transform: translate(0, -40px) rotate(0deg); }
+            75% { transform: translate(-20px, -20px) rotate(-5deg); }
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--gradient-card);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge::before {
+            content: '✨';
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+
+        .hero-title span {
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--gray-500);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--gradient-hero);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .floating-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: var(--shadow-lg);
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(2) { top: 10%; left: -10%; animation-delay: 0s; }
+        .floating-icon:nth-child(3) { top: 5%; right: 0; animation-delay: 0.5s; }
+        .floating-icon:nth-child(4) { bottom: 20%; left: -15%; animation-delay: 1s; }
+        .floating-icon:nth-child(5) { bottom: 10%; right: -5%; animation-delay: 1.5s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* ===== Stats Marquee ===== */
+        .stats-marquee {
+            padding: 24px 0;
+            background: var(--dark);
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 48px;
+            padding-right: 48px;
+            flex-shrink: 0;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--white);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .marquee-item span {
+            color: var(--accent-pink);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== Section Base ===== */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--gradient-card);
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--gray-500);
+        }
+
+        /* ===== Features Grid (Expertise) ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--gradient-card);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transition: var(--transition);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+
+        /* ===== Two Column Section ===== */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .two-col.reverse {
+            direction: rtl;
+        }
+
+        .two-col.reverse > * {
+            direction: ltr;
+        }
+
+        .two-col-image {
+            position: relative;
+        }
+
+        .two-col-image img,
+        .two-col-image .image-placeholder {
+            width: 100%;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .image-placeholder {
+            aspect-ratio: 4/3;
+            background: var(--gradient-hero);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+        }
+
+        .two-col-content .section-badge {
+            margin-bottom: 16px;
+        }
+
+        .two-col-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .two-col-content p {
+            font-size: 1.125rem;
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-weight: 500;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== Stats Section ===== */
+        .stats-section {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 800;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--gray-300);
+        }
+
+        /* ===== Timeline ===== */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-hero);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-date {
+            flex: 1;
+            text-align: right;
+            padding-top: 8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            text-align: left;
+        }
+
+        .timeline-date span {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-xl);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .timeline-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .timeline-content p {
+            font-size: 0.9375rem;
+            color: var(--gray-500);
+        }
+
+        /* ===== Portfolio Table ===== */
+        .portfolio-section {
+            background: var(--gray-100);
+        }
+
+        .portfolio-tabs {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: var(--white);
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-xl);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        .portfolio-table {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .portfolio-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .portfolio-table th,
+        .portfolio-table td {
+            padding: 20px 24px;
+            text-align: left;
+        }
+
+        .portfolio-table th {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        .portfolio-table tr:nth-child(even) {
+            background: var(--gray-100);
+        }
+
+        .portfolio-table tr:hover {
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        .portfolio-table td {
+            font-size: 0.9375rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: var(--radius-xl);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-school {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+        }
+
+        .badge-corp {
+            background: rgba(236, 72, 153, 0.1);
+            color: var(--accent-pink);
+        }
+
+        /* ===== Certifications ===== */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .cert-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .cert-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cert-org {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonials-section {
+            background: linear-gradient(180deg, var(--white) 0%, #F8F4FF 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .testimonial-quote {
+            font-size: 1.125rem;
+            font-style: italic;
+            color: var(--gray-700);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-hero);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+        }
+
+        .testimonial-role {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* ===== Contact Section ===== */
+        .contact-section {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .contact-info p {
+            font-size: 1.125rem;
+            color: var(--gray-300);
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(124, 58, 237, 0.2);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .contact-item-text {
+            font-size: 1rem;
+        }
+
+        .contact-item-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 4px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--gray-300);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--gray-500);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-select {
+            cursor: pointer;
+        }
+
+        .form-select option {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .form-textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 18px 32px;
+            background: var(--gradient-hero);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-xl);
+            font-family: inherit;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--gradient-hero);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-description {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 18px 40px;
+            background: var(--white);
+            color: var(--primary);
+            border-radius: var(--radius-xl);
+            font-size: 1.125rem;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: var(--gray-500);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+
+        .footer-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            font-size: 0.9375rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* ===== Admin Panel ===== */
+        .admin-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 40px 20px;
+        }
+
+        .admin-overlay.active {
+            display: block;
+        }
+
+        .admin-panel {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .admin-header {
+            background: var(--gradient-hero);
+            color: var(--white);
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .admin-close {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 24px 32px;
+            background: var(--gray-100);
+        }
+
+        .admin-stat {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .admin-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .admin-stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-top: 4px;
+        }
+
+        .admin-toolbar {
+            padding: 20px 32px;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .admin-filter {
+            display: flex;
+            gap: 8px;
+        }
+
+        .admin-filter-btn {
+            padding: 8px 16px;
+            background: var(--gray-100);
+            border: none;
+            border-radius: var(--radius-xl);
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .admin-filter-btn:hover,
+        .admin-filter-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .admin-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .admin-btn {
+            padding: 8px 16px;
+            background: var(--white);
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .admin-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .admin-btn-danger {
+            color: #EF4444;
+            border-color: #EF4444;
+        }
+
+        .admin-btn-danger:hover {
+            background: #EF4444;
+            color: var(--white);
+        }
+
+        .admin-content {
+            padding: 0 32px 32px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .inquiry-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .inquiry-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .inquiry-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .inquiry-card.read {
+            opacity: 0.7;
+            background: var(--gray-100);
+        }
+
+        .inquiry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .inquiry-info {
+            flex: 1;
+        }
+
+        .inquiry-name {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .inquiry-email {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .inquiry-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .inquiry-type {
+            padding: 4px 12px;
+            border-radius: var(--radius-xl);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .inquiry-type.school {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+        }
+
+        .inquiry-type.corp {
+            background: rgba(236, 72, 153, 0.1);
+            color: var(--accent-pink);
+        }
+
+        .inquiry-type.private {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent-yellow);
+        }
+
+        .inquiry-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #10B981;
+        }
+
+        .inquiry-status.unread {
+            background: #EF4444;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .inquiry-message {
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            padding: 16px;
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+        }
+
+        .inquiry-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .inquiry-date {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        .inquiry-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .inquiry-btn {
+            padding: 6px 12px;
+            background: var(--white);
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .inquiry-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .inquiry-btn-delete:hover {
+            border-color: #EF4444;
+            color: #EF4444;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--gray-500);
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .empty-state-text {
+            font-size: 1.125rem;
+        }
+
+        /* Admin Login Modal */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-modal.active {
+            display: flex;
+        }
+
+        .login-box {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .login-box p {
+            color: var(--gray-500);
+            margin-bottom: 24px;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .login-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--gradient-hero);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-xl);
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .login-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .login-cancel {
+            margin-top: 16px;
+            background: none;
+            border: none;
+            color: var(--gray-500);
+            font-family: inherit;
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+
+        .login-cancel:hover {
+            color: var(--dark);
+        }
+
+        .login-error {
+            color: #EF4444;
+            font-size: 0.875rem;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .login-error.show {
+            display: block;
+        }
+
+        /* Admin Button in Header */
+        .admin-trigger {
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-xl);
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 8px;
+        }
+
+        .admin-trigger:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Mobile Admin Styles */
+        @media (max-width: 768px) {
+            .admin-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .admin-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .admin-filter {
+                flex-wrap: wrap;
+            }
+
+            .inquiry-header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .inquiry-meta {
+                order: -1;
+            }
+        }
+
+        /* ===== Mobile Menu Active State ===== */
+        .nav.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 24px;
+            box-shadow: var(--shadow-lg);
+            gap: 16px;
+        }
+
+        .nav.active .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ===== Mobile Responsive ===== */
+        @media (max-width: 1024px) {
+            .features-grid,
+            .stats-grid,
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .two-col.reverse {
+                direction: ltr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 2;
+            }
+
+            .hero-visual {
+                order: 1;
+            }
+
+            .hero-description {
+                margin: 0 auto 32px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                max-width: 300px;
+            }
+
+            .floating-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.25rem;
+            }
+
+            .features-grid,
+            .stats-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                padding-left: 50px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .timeline-date {
+                text-align: left !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+
+        /* ===== Animation Classes ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">대담쌤</a>
+                <nav class="nav">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#expertise" class="nav-link">전문 분야</a>
+                    <a href="#career" class="nav-link">경력</a>
+                    <a href="#portfolio" class="nav-link">포트폴리오</a>
+                    <a href="#contact" class="btn btn-primary">강의 문의</a>
+                    <button class="admin-trigger" id="admin-trigger">🔐 관리자</button>
+                </nav>
+                <button class="mobile-menu-btn" aria-label="메뉴">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-badge">15년 IT 전문가 + AI 교육 강사</div>
+                    <h1 class="hero-title">
+                        AI 시대,<br>
+                        <span>미래를 코딩</span>하다
+                    </h1>
+                    <p class="hero-description">
+                        야놀자, NHN 등 대기업에서 데이터베이스 전문가로 활동한 경험을 바탕으로, 실무 중심의 AI·코딩 교육을 제공합니다.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">강의 문의하기</a>
+                        <a href="#portfolio" class="btn btn-outline">포트폴리오 보기</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image">👩‍💻</div>
+                        <div class="floating-icon">🤖</div>
+                        <div class="floating-icon">🧱</div>
+                        <div class="floating-icon">💻</div>
+                        <div class="floating-icon">🎯</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Marquee -->
+    <div class="stats-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <div class="marquee-item"><span>✓</span> 15년+ IT 실무 경험</div>
+                <div class="marquee-item"><span>✓</span> 2025년 100+ 강의</div>
+                <div class="marquee-item"><span>✓</span> AWS re:Invent 참석</div>
+                <div class="marquee-item"><span>✓</span> SQLP 전문가 자격</div>
+                <div class="marquee-item"><span>✓</span> 초·중·고 맞춤 교육</div>
+                <div class="marquee-item"><span>✓</span> 기업 교육 전문</div>
+            </div>
+            <div class="marquee-content">
+                <div class="marquee-item"><span>✓</span> 15년+ IT 실무 경험</div>
+                <div class="marquee-item"><span>✓</span> 2025년 100+ 강의</div>
+                <div class="marquee-item"><span>✓</span> AWS re:Invent 참석</div>
+                <div class="marquee-item"><span>✓</span> SQLP 전문가 자격</div>
+                <div class="marquee-item"><span>✓</span> 초·중·고 맞춤 교육</div>
+                <div class="marquee-item"><span>✓</span> 기업 교육 전문</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="two-col">
+                <div class="two-col-image fade-in">
+                    <div class="image-placeholder">🎓</div>
+                </div>
+                <div class="two-col-content fade-in">
+                    <span class="section-badge">About Me</span>
+                    <h2>복잡한 기술을<br>쉽고 재미있게</h2>
+                    <p>
+                        IT 현장에서 15년간 데이터베이스 전문가로 활동하며 쌓은 실무 경험을 교육에 녹여내고 있습니다. 야놀자에서 수천만 사용자의 데이터를 다루던 손으로, 이제 아이들의 미래를 코딩합니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>야놀자, NHN 등 대기업 DBA 경력</li>
+                        <li>SQLP · DAP · AI융합코딩교육지도사</li>
+                        <li>디지털 PBL 에듀케이터 2급</li>
+                        <li>AWS re:Invent 2021 참석</li>
+                    </ul>
+                    <a href="#career" class="btn btn-primary">경력 더보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="section" id="expertise" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Expertise</span>
+                <h2 class="section-title">전문 교육 프로그램</h2>
+                <p class="section-description">
+                    AI부터 로봇까지, 다양한 맞춤형 교육 프로그램을 제공합니다
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI & ChatGPT</h3>
+                    <p class="feature-description">ChatGPT 업무 활용, AI 디지털 리터러시, AI 진로 융합 교육</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💻</div>
+                    <h3 class="feature-title">코딩 교육</h3>
+                    <p class="feature-description">스크래치, 레고 스파이크, 할로코드 & 엠블럭, FLL 멘토링</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔧</div>
+                    <h3 class="feature-title">로봇 & 메이킹</h3>
+                    <p class="feature-description">핑퐁 로봇, 아두이노, SW 해커톤 멘토링</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">진로 교육</h3>
+                    <p class="feature-description">빅데이터 전문가, 컴퓨터공학, AI 전문가 진로체험</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🏢</div>
+                    <h3 class="feature-title">기업 교육</h3>
+                    <p class="feature-description">ChatGPT 보고서 작성, SQL 튜닝, 데이터 모델링</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">취업 컨설팅</h3>
+                    <p class="feature-description">특성화고 진로 상담, 이력서 & 면접 코칭</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">FLL Challenge</h3>
+                    <p class="feature-description">UNEARTHED 시즌 로봇 대회 멘토링</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">데이터베이스</h3>
+                    <p class="feature-description">Aurora MySQL, 성능 최적화, 데이터 아키텍처</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLL Spotlight Section -->
+    <section class="section">
+        <div class="container">
+            <div class="two-col reverse">
+                <div class="two-col-image fade-in">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);">🤖</div>
+                </div>
+                <div class="two-col-content fade-in">
+                    <span class="section-badge" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-yellow);">🏆 2025-2026 시즌 진행중</span>
+                    <h2>FLL Challenge<br>UNEARTHED</h2>
+                    <p>
+                        홍성 홍북중학교 학생들과 함께 세계 최대 규모의 로봇 대회에 도전합니다. UNEARTHED는 땅속에 숨겨진 것을 찾아 드러낸다는 뜻으로, 자원 발굴과 새로운 가능성 발견의 의미를 담고 있습니다.
+                    </p>
+                    <ul class="feature-list">
+                        <li>로봇 게임: 2분 30초 동안 15가지 미션 수행</li>
+                        <li>혁신 프로젝트: 고고학과 자원 발굴 주제</li>
+                        <li>Core Values: Discovery, Innovation, Impact</li>
+                        <li>팀워크: 역할 분담과 협업 학습</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years IT Experience</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Lessons in 2025</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">70+</div>
+                    <div class="stat-label">Services Tuned at NHN</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Professional Certifications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline -->
+    <section class="section" id="career">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Career</span>
+                <h2 class="section-title">IT 경력</h2>
+                <p class="section-description">
+                    15년간의 현장 경험이 교육의 깊이가 됩니다
+                </p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date"><span>2023 ~</span></div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>AI 융합 코딩 교육 강사</h3>
+                        <h4>대담쌤 | 프리랜서</h4>
+                        <p>초·중·고 및 기업 대상 AI, 코딩, 로봇 교육 진행. 2025년 100차시 이상 강의.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date"><span>2020 - 2023</span></div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>㈜ 야놀자</h3>
+                        <h4>DBA 매니저</h4>
+                        <p>Aurora MySQL 업그레이드, AWS re:Invent 2021 참석, 대규모 트래픽 데이터베이스 운영</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date"><span>2018 - 2020</span></div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>㈜ NHN</h3>
+                        <h4>DBA 선임</h4>
+                        <p>70여개 서비스 DB 튜닝, 성능 최적화 및 안정적 운영 담당</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date"><span>2016 - 2018</span></div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>㈜ NHN ACE</h3>
+                        <h4>DA/DBA</h4>
+                        <p>광고 플랫폼 데이터베이스 최적화</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date"><span>2010 - 2016</span></div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>㈜ 이노트리 / ㈜ 엑시엄</h3>
+                        <h4>DA/DBA</h4>
+                        <p>삼성전자 글로벌 쇼핑몰, SKT 시스템 운영</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Portfolio</span>
+                <h2 class="section-title">주요 강의 실적</h2>
+                <p class="section-description">
+                    초등학교부터 기업까지, 다양한 대상에게 맞춤형 교육을 제공합니다
+                </p>
+            </div>
+            <div class="portfolio-tabs fade-in">
+                <button class="tab-btn active" data-tab="all">전체</button>
+                <button class="tab-btn" data-tab="school">학교 교육</button>
+                <button class="tab-btn" data-tab="corp">기업 교육</button>
+            </div>
+            <div class="portfolio-table fade-in">
+                <table id="portfolio-table">
+                    <thead>
+                        <tr>
+                            <th>기관</th>
+                            <th>대상</th>
+                            <th>교육 내용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-type="school">
+                            <td>서울 선유초등학교</td>
+                            <td><span class="badge badge-school">초등학교</span></td>
+                            <td>레고 스파이크 에센셜</td>
+                        </tr>
+                        <tr data-type="school">
+                            <td>홍성 홍북중학교</td>
+                            <td><span class="badge badge-school">중학교</span></td>
+                            <td>FLL 멘토링</td>
+                        </tr>
+                        <tr data-type="school">
+                            <td>인천 재능고등학교</td>
+                            <td><span class="badge badge-school">고등학교</span></td>
+                            <td>SW 해커톤 멘토링</td>
+                        </tr>
+                        <tr data-type="school">
+                            <td>서울 밀알고등학교</td>
+                            <td><span class="badge badge-school">고등학교</span></td>
+                            <td>오스모 잼 코딩</td>
+                        </tr>
+                        <tr data-type="school">
+                            <td>인천 인주중학교</td>
+                            <td><span class="badge badge-school">중학교</span></td>
+                            <td>디지털 새싹 리듬 코딩</td>
+                        </tr>
+                        <tr data-type="corp">
+                            <td>㈜부강산업</td>
+                            <td><span class="badge badge-corp">기업</span></td>
+                            <td>ChatGPT 활용 보고서 작성</td>
+                        </tr>
+                        <tr data-type="corp">
+                            <td>㈜오토마</td>
+                            <td><span class="badge badge-corp">기업</span></td>
+                            <td>ChatGPT 업무 활용</td>
+                        </tr>
+                        <tr data-type="corp">
+                            <td>㈜야놀자</td>
+                            <td><span class="badge badge-corp">기업</span></td>
+                            <td>SQL 튜닝 사내 교육</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Certifications</span>
+                <h2 class="section-title">자격 & 인증</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card fade-in">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-name">SQLP</div>
+                    <div class="cert-org">SQL 전문가</div>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-name">DAP</div>
+                    <div class="cert-org">데이터 아키텍처 전문가</div>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-icon">🎓</div>
+                    <div class="cert-name">AI융합코딩교육지도사</div>
+                    <div class="cert-org">교육 전문 자격</div>
+                </div>
+                <div class="cert-card fade-in">
+                    <div class="cert-icon">📜</div>
+                    <div class="cert-name">디지털 PBL 에듀케이터</div>
+                    <div class="cert-org">2급</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">교육 후기</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">
+                        실무 경험을 바탕으로 한 설명이 정말 이해하기 쉬웠어요. ChatGPT를 업무에 바로 적용할 수 있게 되었습니다.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">👨‍💼</div>
+                        <div>
+                            <div class="testimonial-name">김OO 대리</div>
+                            <div class="testimonial-role">㈜부강산업</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">
+                        아이들이 로봇 수업을 정말 좋아해요. 레고로 코딩을 배우니까 흥미를 잃지 않고 끝까지 집중하더라고요.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">👩‍🏫</div>
+                        <div>
+                            <div class="testimonial-name">박OO 선생님</div>
+                            <div class="testimonial-role">서울 선유초등학교</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">
+                        FLL 멘토링 덕분에 대회 준비가 체계적으로 진행됐어요. 팀워크의 중요성도 배웠습니다.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">👦</div>
+                        <div>
+                            <div class="testimonial-name">이OO 학생</div>
+                            <div class="testimonial-role">홍북중학교 FLL 팀</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h2>함께 미래를<br>코딩해요</h2>
+                    <p>
+                        AI 시대에 필요한 디지털 역량부터 코딩, 진로 교육까지 — 문수희 강사와 함께하세요.
+                    </p>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <div class="contact-item-label">Email</div>
+                            <div class="contact-item-text">aive.msh@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📱</div>
+                        <div>
+                            <div class="contact-item-label">Phone</div>
+                            <div class="contact-item-text">010-2164-2076</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <div class="contact-item-label">Location</div>
+                            <div class="contact-item-text">경기도 성남시 분당구</div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/aive.msh/" class="social-link" target="_blank">📸</a>
+                        <a href="https://blog.naver.com/beboldmoon" class="social-link" target="_blank">📝</a>
+                        <a href="https://kr.pinterest.com/aivemsh/" class="social-link" target="_blank">🎨</a>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name">이름</label>
+                            <input type="text" id="name" class="form-input" placeholder="성함을 입력해주세요" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">이메일</label>
+                            <input type="email" id="email" class="form-input" placeholder="이메일 주소를 입력해주세요" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="type">문의 유형</label>
+                            <select id="type" class="form-select" required>
+                                <option value="">선택해주세요</option>
+                                <option value="school">학교 교육</option>
+                                <option value="corp">기업 교육</option>
+                                <option value="private">개인/기타</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message">메시지</label>
+                            <textarea id="message" class="form-textarea" placeholder="문의 내용을 입력해주세요" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">문의하기 →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">IT 현장 경험을 바탕으로<br>실용적이고 재미있는 교육을 제공합니다</h2>
+            <p class="cta-description">지금 바로 문의하세요!</p>
+            <a href="#contact" class="cta-btn">강의 문의하기 →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">대담쌤</div>
+                    <p>
+                        AI 시대에 필요한 디지털 역량부터 코딩, 진로 교육까지 — 15년 IT 전문가가 가르치는 실전 교육
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-title">교육 프로그램</h4>
+                    <ul class="footer-links">
+                        <li><a href="#expertise">AI & ChatGPT</a></li>
+                        <li><a href="#expertise">코딩 교육</a></li>
+                        <li><a href="#expertise">로봇 & 메이킹</a></li>
+                        <li><a href="#expertise">기업 교육</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">바로가기</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#career">경력</a></li>
+                        <li><a href="#portfolio">포트폴리오</a></li>
+                        <li><a href="#contact">문의하기</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">소속</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">㈜ 드림베이스</a></li>
+                        <li><a href="#">㈜ 퓨너스</a></li>
+                        <li><a href="#">㈜ 로보라이즌</a></li>
+                        <li><a href="#">㈜ 쪼앤미</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 대담쌤 문수희 | AI & 코딩 교육 전문가</p>
+                <div>
+                    <a href="https://www.instagram.com/aive.msh/" target="_blank">Instagram</a> · 
+                    <a href="https://blog.naver.com/beboldmoon" target="_blank">Blog</a> · 
+                    <a href="https://kr.pinterest.com/aivemsh/" target="_blank">Pinterest</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="login-modal">
+        <div class="login-box">
+            <h3>🔐 관리자 로그인</h3>
+            <p>문의 내역을 확인하려면 비밀번호를 입력하세요</p>
+            <div class="login-error" id="login-error">비밀번호가 올바르지 않습니다</div>
+            <input type="password" class="login-input" id="admin-password" placeholder="비밀번호 입력">
+            <button class="login-submit" id="login-submit">로그인</button>
+            <button class="login-cancel" id="login-cancel">취소</button>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-overlay" id="admin-overlay">
+        <div class="admin-panel">
+            <div class="admin-header">
+                <h2>📋 문의 관리 게시판</h2>
+                <button class="admin-close" id="admin-close">×</button>
+            </div>
+            <div class="admin-stats" id="admin-stats">
+                <div class="admin-stat">
+                    <div class="admin-stat-number" id="stat-total">0</div>
+                    <div class="admin-stat-label">전체 문의</div>
+                </div>
+                <div class="admin-stat">
+                    <div class="admin-stat-number" id="stat-unread">0</div>
+                    <div class="admin-stat-label">미확인</div>
+                </div>
+                <div class="admin-stat">
+                    <div class="admin-stat-number" id="stat-school">0</div>
+                    <div class="admin-stat-label">학교 교육</div>
+                </div>
+                <div class="admin-stat">
+                    <div class="admin-stat-number" id="stat-corp">0</div>
+                    <div class="admin-stat-label">기업 교육</div>
+                </div>
+            </div>
+            <div class="admin-toolbar">
+                <div class="admin-filter">
+                    <button class="admin-filter-btn active" data-filter="all">전체</button>
+                    <button class="admin-filter-btn" data-filter="unread">미확인</button>
+                    <button class="admin-filter-btn" data-filter="school">학교</button>
+                    <button class="admin-filter-btn" data-filter="corp">기업</button>
+                    <button class="admin-filter-btn" data-filter="private">개인</button>
+                </div>
+                <div class="admin-actions">
+                    <button class="admin-btn" id="mark-all-read">✓ 모두 읽음</button>
+                    <button class="admin-btn" id="export-csv">📥 CSV 내보내기</button>
+                    <button class="admin-btn admin-btn-danger" id="delete-all">🗑 전체 삭제</button>
+                </div>
+            </div>
+            <div class="admin-content">
+                <div class="inquiry-list" id="inquiry-list">
+                    <!-- 문의 목록이 여기에 동적으로 추가됩니다 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ===== Wait for DOM to be ready =====
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // ===== Admin Configuration =====
+            var ADMIN_PASSWORD = 'aive2025'; // 관리자 비밀번호 (실제 운영시 변경 필요)
+            
+            // ===== Inquiry Data Management =====
+            function getInquiries() {
+                var data = localStorage.getItem('aive_inquiries');
+                return data ? JSON.parse(data) : [];
+            }
+            
+            function saveInquiries(inquiries) {
+                localStorage.setItem('aive_inquiries', JSON.stringify(inquiries));
+            }
+            
+            function addInquiry(inquiry) {
+                var inquiries = getInquiries();
+                inquiry.id = Date.now();
+                inquiry.date = new Date().toISOString();
+                inquiry.read = false;
+                inquiries.unshift(inquiry);
+                saveInquiries(inquiries);
+                return inquiry;
+            }
+            
+            function deleteInquiry(id) {
+                var inquiries = getInquiries();
+                inquiries = inquiries.filter(function(inq) { return inq.id !== id; });
+                saveInquiries(inquiries);
+            }
+            
+            function markAsRead(id) {
+                var inquiries = getInquiries();
+                inquiries = inquiries.map(function(inq) {
+                    if (inq.id === id) {
+                        inq.read = true;
+                    }
+                    return inq;
+                });
+                saveInquiries(inquiries);
+            }
+            
+            function markAllAsRead() {
+                var inquiries = getInquiries();
+                inquiries = inquiries.map(function(inq) {
+                    inq.read = true;
+                    return inq;
+                });
+                saveInquiries(inquiries);
+            }
+            
+            function deleteAllInquiries() {
+                localStorage.removeItem('aive_inquiries');
+            }
+            
+            // ===== Format Date =====
+            function formatDate(dateString) {
+                var date = new Date(dateString);
+                var year = date.getFullYear();
+                var month = String(date.getMonth() + 1).padStart(2, '0');
+                var day = String(date.getDate()).padStart(2, '0');
+                var hours = String(date.getHours()).padStart(2, '0');
+                var minutes = String(date.getMinutes()).padStart(2, '0');
+                return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes;
+            }
+            
+            // ===== Get Type Label =====
+            function getTypeLabel(type) {
+                var labels = {
+                    'school': '학교 교육',
+                    'corp': '기업 교육',
+                    'private': '개인/기타'
+                };
+                return labels[type] || type;
+            }
+            
+            // ===== Update Admin Stats =====
+            function updateStats() {
+                var inquiries = getInquiries();
+                var total = inquiries.length;
+                var unread = inquiries.filter(function(inq) { return !inq.read; }).length;
+                var school = inquiries.filter(function(inq) { return inq.type === 'school'; }).length;
+                var corp = inquiries.filter(function(inq) { return inq.type === 'corp'; }).length;
+                
+                var statTotal = document.getElementById('stat-total');
+                var statUnread = document.getElementById('stat-unread');
+                var statSchool = document.getElementById('stat-school');
+                var statCorp = document.getElementById('stat-corp');
+                
+                if (statTotal) statTotal.textContent = total;
+                if (statUnread) statUnread.textContent = unread;
+                if (statSchool) statSchool.textContent = school;
+                if (statCorp) statCorp.textContent = corp;
+            }
+            
+            // ===== Render Inquiry List =====
+            function renderInquiries(filter) {
+                var inquiries = getInquiries();
+                var inquiryList = document.getElementById('inquiry-list');
+                
+                if (!inquiryList) return;
+                
+                // Apply filter
+                if (filter && filter !== 'all') {
+                    if (filter === 'unread') {
+                        inquiries = inquiries.filter(function(inq) { return !inq.read; });
+                    } else {
+                        inquiries = inquiries.filter(function(inq) { return inq.type === filter; });
+                    }
+                }
+                
+                if (inquiries.length === 0) {
+                    inquiryList.innerHTML = '<div class="empty-state">' +
+                        '<div class="empty-state-icon">📭</div>' +
+                        '<div class="empty-state-text">문의 내역이 없습니다</div>' +
+                        '</div>';
+                    return;
+                }
+                
+                var html = '';
+                inquiries.forEach(function(inq) {
+                    html += '<div class="inquiry-card ' + (inq.read ? 'read' : '') + '" data-id="' + inq.id + '">' +
+                        '<div class="inquiry-header">' +
+                            '<div class="inquiry-info">' +
+                                '<div class="inquiry-name">' + escapeHtml(inq.name) + '</div>' +
+                                '<div class="inquiry-email">' + escapeHtml(inq.email) + '</div>' +
+                            '</div>' +
+                            '<div class="inquiry-meta">' +
+                                '<span class="inquiry-type ' + inq.type + '">' + getTypeLabel(inq.type) + '</span>' +
+                                '<span class="inquiry-status ' + (inq.read ? '' : 'unread') + '"></span>' +
+                            '</div>' +
+                        '</div>' +
+                        '<div class="inquiry-message">' + escapeHtml(inq.message) + '</div>' +
+                        '<div class="inquiry-footer">' +
+                            '<div class="inquiry-date">📅 ' + formatDate(inq.date) + '</div>' +
+                            '<div class="inquiry-actions">' +
+                                (inq.read ? '' : '<button class="inquiry-btn mark-read-btn" data-id="' + inq.id + '">✓ 읽음</button>') +
+                                '<button class="inquiry-btn" onclick="window.location.href=\'mailto:' + escapeHtml(inq.email) + '\'">✉️ 답장</button>' +
+                                '<button class="inquiry-btn inquiry-btn-delete delete-btn" data-id="' + inq.id + '">삭제</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+                });
+                
+                inquiryList.innerHTML = html;
+                
+                // Add event listeners for buttons
+                var markReadBtns = inquiryList.querySelectorAll('.mark-read-btn');
+                markReadBtns.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        var id = parseInt(this.dataset.id);
+                        markAsRead(id);
+                        updateStats();
+                        renderInquiries(currentFilter);
+                    });
+                });
+                
+                var deleteBtns = inquiryList.querySelectorAll('.delete-btn');
+                deleteBtns.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        if (confirm('이 문의를 삭제하시겠습니까?')) {
+                            var id = parseInt(this.dataset.id);
+                            deleteInquiry(id);
+                            updateStats();
+                            renderInquiries(currentFilter);
+                        }
+                    });
+                });
+            }
+            
+            // ===== Escape HTML =====
+            function escapeHtml(text) {
+                var div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+            
+            // ===== Export to CSV =====
+            function exportToCSV() {
+                var inquiries = getInquiries();
+                if (inquiries.length === 0) {
+                    alert('내보낼 문의 내역이 없습니다.');
+                    return;
+                }
+                
+                var csv = '이름,이메일,문의유형,메시지,날짜,읽음여부\n';
+                inquiries.forEach(function(inq) {
+                    csv += '"' + inq.name + '","' + inq.email + '","' + getTypeLabel(inq.type) + '","' + 
+                           inq.message.replace(/"/g, '""') + '","' + formatDate(inq.date) + '","' + 
+                           (inq.read ? '읽음' : '미확인') + '"\n';
+                });
+                
+                var blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+                var link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = '대담쌤_문의내역_' + new Date().toISOString().split('T')[0] + '.csv';
+                link.click();
+            }
+            
+            // ===== Current Filter State =====
+            var currentFilter = 'all';
+            
+            // ===== Header Scroll Effect =====
+            var header = document.getElementById('header');
+            
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // ===== Smooth Scroll for Navigation =====
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var href = this.getAttribute('href');
+                    if (href && href !== '#') {
+                        e.preventDefault();
+                        var target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            // Close mobile menu if open
+                            var nav = document.querySelector('.nav');
+                            if (nav) {
+                                nav.classList.remove('active');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // ===== Portfolio Filter Tabs =====
+            var tabBtns = document.querySelectorAll('.tab-btn');
+            var tableRows = document.querySelectorAll('#portfolio-table tbody tr');
+
+            tabBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    // Update active tab
+                    tabBtns.forEach(function(b) { 
+                        b.classList.remove('active'); 
+                    });
+                    btn.classList.add('active');
+
+                    // Filter rows
+                    var filter = btn.dataset.tab;
+                    
+                    tableRows.forEach(function(row) {
+                        if (filter === 'all' || row.dataset.type === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // ===== Scroll Animation (Intersection Observer) =====
+            var fadeElements = document.querySelectorAll('.fade-in');
+
+            if ('IntersectionObserver' in window) {
+                var observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+
+                var fadeObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            fadeObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                fadeElements.forEach(function(el) {
+                    fadeObserver.observe(el);
+                });
+            } else {
+                // Fallback for older browsers
+                fadeElements.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // ===== Contact Form Submission =====
+            var contactForm = document.getElementById('contact-form');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    var nameInput = document.getElementById('name');
+                    var emailInput = document.getElementById('email');
+                    var typeInput = document.getElementById('type');
+                    var messageInput = document.getElementById('message');
+                    
+                    if (nameInput && emailInput && typeInput && messageInput) {
+                        var formData = {
+                            name: nameInput.value,
+                            email: emailInput.value,
+                            type: typeInput.value,
+                            message: messageInput.value
+                        };
+
+                        // Save inquiry to localStorage
+                        addInquiry(formData);
+
+                        // Show success message
+                        alert('감사합니다, ' + formData.name + '님!\n문의가 접수되었습니다. 빠른 시일 내에 답변 드리겠습니다.');
+                        
+                        // Reset form
+                        contactForm.reset();
+                    }
+                });
+            }
+
+            // ===== Mobile Menu Toggle =====
+            var mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            var nav = document.querySelector('.nav');
+
+            if (mobileMenuBtn && nav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                });
+            }
+            
+            // ===== Admin Panel Functions =====
+            var adminTrigger = document.getElementById('admin-trigger');
+            var loginModal = document.getElementById('login-modal');
+            var loginSubmit = document.getElementById('login-submit');
+            var loginCancel = document.getElementById('login-cancel');
+            var adminPassword = document.getElementById('admin-password');
+            var loginError = document.getElementById('login-error');
+            var adminOverlay = document.getElementById('admin-overlay');
+            var adminClose = document.getElementById('admin-close');
+            var markAllReadBtn = document.getElementById('mark-all-read');
+            var exportCsvBtn = document.getElementById('export-csv');
+            var deleteAllBtn = document.getElementById('delete-all');
+            var adminFilterBtns = document.querySelectorAll('.admin-filter-btn');
+            
+            // Open Login Modal
+            if (adminTrigger) {
+                adminTrigger.addEventListener('click', function() {
+                    if (loginModal) {
+                        loginModal.classList.add('active');
+                        if (adminPassword) adminPassword.focus();
+                    }
+                });
+            }
+            
+            // Close Login Modal
+            if (loginCancel) {
+                loginCancel.addEventListener('click', function() {
+                    if (loginModal) {
+                        loginModal.classList.remove('active');
+                        if (adminPassword) adminPassword.value = '';
+                        if (loginError) loginError.classList.remove('show');
+                    }
+                });
+            }
+            
+            // Submit Login
+            function attemptLogin() {
+                if (adminPassword && adminPassword.value === ADMIN_PASSWORD) {
+                    if (loginModal) loginModal.classList.remove('active');
+                    if (adminOverlay) adminOverlay.classList.add('active');
+                    if (adminPassword) adminPassword.value = '';
+                    if (loginError) loginError.classList.remove('show');
+                    updateStats();
+                    renderInquiries('all');
+                } else {
+                    if (loginError) loginError.classList.add('show');
+                    if (adminPassword) {
+                        adminPassword.value = '';
+                        adminPassword.focus();
+                    }
+                }
+            }
+            
+            if (loginSubmit) {
+                loginSubmit.addEventListener('click', attemptLogin);
+            }
+            
+            if (adminPassword) {
+                adminPassword.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        attemptLogin();
+                    }
+                });
+            }
+            
+            // Close Admin Panel
+            if (adminClose) {
+                adminClose.addEventListener('click', function() {
+                    if (adminOverlay) adminOverlay.classList.remove('active');
+                });
+            }
+            
+            // Close on overlay click
+            if (adminOverlay) {
+                adminOverlay.addEventListener('click', function(e) {
+                    if (e.target === adminOverlay) {
+                        adminOverlay.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Admin Filter Buttons
+            adminFilterBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    adminFilterBtns.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    renderInquiries(currentFilter);
+                });
+            });
+            
+            // Mark All as Read
+            if (markAllReadBtn) {
+                markAllReadBtn.addEventListener('click', function() {
+                    if (confirm('모든 문의를 읽음 처리하시겠습니까?')) {
+                        markAllAsRead();
+                        updateStats();
+                        renderInquiries(currentFilter);
+                    }
+                });
+            }
+            
+            // Export CSV
+            if (exportCsvBtn) {
+                exportCsvBtn.addEventListener('click', exportToCSV);
+            }
+            
+            // Delete All
+            if (deleteAllBtn) {
+                deleteAllBtn.addEventListener('click', function() {
+                    if (confirm('정말 모든 문의를 삭제하시겠습니까?\n이 작업은 되돌릴 수 없습니다.')) {
+                        deleteAllInquiries();
+                        updateStats();
+                        renderInquiries(currentFilter);
+                    }
+                });
+            }
+            
+            // Close modals on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    if (loginModal) loginModal.classList.remove('active');
+                    if (adminOverlay) adminOverlay.classList.remove('active');
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
